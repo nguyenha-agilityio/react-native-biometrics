@@ -49,7 +49,7 @@ RCT_EXPORT_METHOD(createKeys: (NSDictionary *)params resolver:(RCTPromiseResolve
     CFErrorRef error = NULL;
     BOOL allowDeviceCredentials = [RCTConvert BOOL:params[@"allowDeviceCredentials"]];
 
-    SecAccessControlCreateFlags secCreateFlag = kSecAccessControlBiometryCurrentSet;
+    SecAccessControlCreateFlags secCreateFlag = kSecAccessControlBiometryAny;
 
     if (allowDeviceCredentials == TRUE) {
       secCreateFlag = kSecAccessControlUserPresence;
